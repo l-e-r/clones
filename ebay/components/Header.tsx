@@ -8,11 +8,15 @@ import {
     useMetamask
 } from "@thirdweb-dev/react";
 
+import {useTheme} from 'next-themes'
+
 import { 
     BellIcon,
     ShoppingCartIcon,
     ChevronDownIcon,
-    MagnifyingGlassIcon
+    MagnifyingGlassIcon,
+    MoonIcon,
+    SunIcon
 } from "@heroicons/react/24/outline";
 
 import logo from '../assets/images/threebayLogo.png';
@@ -24,6 +28,7 @@ const Header = (props: Props) => {
     const connectWithMetamask = useMetamask();
     const disconnect = useDisconnect();
     const address = useAddress();
+    const {theme, setTheme} = useTheme()
 
     return (
     <div className="max-w-6xl mx-auto p-2">
@@ -41,6 +46,12 @@ const Header = (props: Props) => {
                 <p className="headerLink">Daily Deals</p>
                 <p className="headerLink">Help & Contact</p>
 
+            </div>
+
+            <div className="flex items-center space-x-2 text-sm">
+                 <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                    {theme === 'dark' ? ( <MoonIcon className="h-6 w-6"/> ) : ( <SunIcon className="h-6 w-6"/> )}
+                </button>
             </div>
 
             <div className="flex items-center space-x-4 text-sm">

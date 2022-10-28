@@ -23,7 +23,7 @@ const Home = () => {
           ? (
             <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto">
               {[1,2,3,4].map((item) => (
-              <div className="lex flex-col dummy-card space-y-5 rounded-2xl bg-white/5 p-4 relative 
+              <div className="lex flex-col dummy-card space-y-5 rounded-2xl bg-white/5 dark:bg-black/25 p-4 relative 
                 before:absolute before:inset-0
                 before:-translate-x-full
                 before:animate-[shimmer_2s_infinite]
