@@ -85,10 +85,10 @@ const Home = () => {
                     <div>
                       <h2 className="truncate text-lg">{listing.asset.name}</h2>
                       <hr />
-                      <p className="truncate text-sm text-gray-600 mt-2">{listing.asset.description}</p>
+                      <p className="truncate text-sm text-gray-600 dark:text-gray-400 mt-2">{listing.asset.description}</p>
                     </div>
                   </div>
-                  <p>
+                  <p className="py-4">
                     <span className="font-bold mr-1">
                       {listing.buyoutCurrencyValuePerToken.displayValue}
                     </span>

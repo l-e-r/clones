@@ -85,13 +85,13 @@ const Header = (props: Props) => {
             </div>
 
             <button className="hidden lg:flex items-center space-x-2 w-20">
-                <p className="text-gray-600 text-sm">Shop by Category</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">Shop by Category</p>
                 <ChevronDownIcon className="h-4 flex-shrink-0" />
             </button>
 
-            <div className="flex items-center space-x-2 px-2 md:px-5 md:py-2 border-black border-2 flex-1">
-                <MagnifyingGlassIcon className="w-5 text-gray-400" />
-                <input className="flex-1 outline-none" placeholder="Search for Anything" type="text" />
+            <div className="flex items-center space-x-2 px-2 md:px-5 md:py-2 border-black dark:border-gray-400 border-2 dark:border-1 flex-1">
+                <MagnifyingGlassIcon className="w-5 text-gray-400 dark:text-gray-300" />
+                <input className="flex-1 outline-none bg-transparent" placeholder="Search for Anything" type="text" />
             </div>
 
             <button className="hidden sm:inline bg-blue-600 text-white px-5 py-2 md:px-10 border-2 border-blue-600">Search</button>
