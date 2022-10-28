@@ -4,6 +4,7 @@ import {
   MediaRenderer
 } from "@thirdweb-dev/react";
 
+import { motion } from "framer-motion";
 import { ListingType } from "@thirdweb-dev/sdk";
 import { BanknotesIcon, ClockIcon } from "@heroicons/react/24/outline";
 
@@ -22,9 +23,39 @@ const Home = () => {
           ? (
             <p className="text-center animate-pulse text-blue-500">Loading Listings...</p>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto">
+            <motion.div 
+              variants={{
+                hidden: {
+                  opacity: 0,
+                },
+                show: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.6,
+                      delayChildren: 0.3,
+                    },
+                }
+              }}
+              initial="hidden"
+              animate="show"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto">
               {listings?.map(listing => (
-                <div key={listing.id} className="flex flex-col card hover:scale-105 transition-all duration-150 ease-out">
+                <motion.div
+                  key={listing.id}
+                  variants={{
+                    hidden: {
+                      scale: 0,
+                      opacity: 0
+                    },
+                    show: { 
+                      scale: 1,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.3
+                      }
+                    }
+                  }}
+                  className="flex flex-col card hover:scale-105 transition-all duration-150 ease-out">
                   <div className="flex flex-1 flex-col pb-2 items-center">
                     <MediaRenderer className="w-44 max-h-25"src={listing.asset.image} />
                   </div>
@@ -53,9 +84,9 @@ const Home = () => {
                         )
                       }
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           )
         }
       </main>
