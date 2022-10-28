@@ -21,7 +21,29 @@ const Home = () => {
       <main className="max-w-6xl mx-auto py-2 px-6">
         {loadingListings
           ? (
-            <p className="text-center animate-pulse text-blue-500">Loading Listings...</p>
+            <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto">
+              {[1,2,3,4].map((item) => (
+              <div className="lex flex-col dummy-card space-y-5 rounded-2xl bg-white/5 p-4 relative 
+                before:absolute before:inset-0
+                before:-translate-x-full
+                before:animate-[shimmer_2s_infinite]
+                before:bg-gradient-to-r
+                before:from-transparent before:via-gray-500/20 before:to-transparent
+                isolate
+                overflow-hidden
+                shadow-xl shadow-black/5
+                before:border-t before:border-rose-100/10
+                opacity-50
+              ">
+                <div className="h-24 rounded-lg bg-gray-300"></div>
+                <div className="space-y-3">
+                  <div className="h-3 w-3/5 rounded-lg bg-gray-400"></div>
+                  <div className="h-3 w-4/5 rounded-lg bg-gray-300"></div>
+                  <div className="h-3 w-1/5 rounded-lg bg-gray-400"></div>
+                </div>
+              </div>
+            ))}
+            </div>
           ) : (
             <motion.div 
               variants={{
