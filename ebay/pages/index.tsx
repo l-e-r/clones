@@ -13,7 +13,7 @@ import Header from '../components/Header'
 const Home = () => {
   const { contract } = useContract(process.env.NEXT_PUBLIC_MARKETPLACE_CONTRACT, 'marketplace');
   const { data: listings, isLoading: loadingListings} = useActiveListings(contract);
-  
+    
   return (
     <div className="">
       <Header />
@@ -23,7 +23,7 @@ const Home = () => {
           ? (
             <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto">
               {[1,2,3,4].map((item) => (
-              <div className="lex flex-col dummy-card space-y-5 rounded-2xl bg-white/5 dark:bg-black/25 p-4 relative 
+              <div key={item} className="lex flex-col dummy-card space-y-5 rounded-2xl bg-white/5 dark:bg-black/25 p-4 relative 
                 before:absolute before:inset-0
                 before:-translate-x-full
                 before:animate-[shimmer_2s_infinite]
@@ -78,7 +78,7 @@ const Home = () => {
                     }
                   }}
                   className="flex flex-col card hover:scale-105 transition-all duration-150 ease-out">
-                  <div className="flex flex-1 flex-col pb-2 items-center">
+                  <div className="flex flex-1 flex-col pb-2 items-center justify-center">
                     <MediaRenderer className="w-44 max-h-25"src={listing.asset.image} />
                   </div>
                   <div className="pt-2 space-y-4">

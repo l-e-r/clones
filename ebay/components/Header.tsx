@@ -20,6 +20,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 import logo from '../assets/images/threebayLogo.png';
+import WalletMessage from './WalletMessage';
 
 
 type Props = {}
@@ -70,6 +71,7 @@ const Header = (props: Props) => {
         </nav>
 
         <hr className="mt-2" />
+        {!address ? <WalletMessage /> : null}
 
         <section className="flex items-center space-x-2 py-5">
             <div className="h-16 w-16 sm:w-28 md:w-44 cursor-pointer flex-shrink-0">
@@ -96,7 +98,7 @@ const Header = (props: Props) => {
 
             <button className="hidden sm:inline bg-blue-600 text-white px-5 py-2 md:px-10 border-2 border-blue-600">Search</button>
 
-            <Link href="/create">
+            <Link href="/listItem">
                 <button className="border-2 border-blue-600 px-5 py-2 md:px-10 text-blue-600 hover:bg-blue-600/50 hover:text-white cursor-pointer">List Item</button>
             </Link>
         </section>
