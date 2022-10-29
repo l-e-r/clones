@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import { useAddress, useContract } from "@thirdweb-dev/react";
 import { useRouter } from 'next/router';
 
-import { PhotoIcon } from "@heroicons/react/24/outline";
+import Image from 'next/image';
 
 type Props = {}
 
@@ -68,7 +68,13 @@ const addItem = (props: Props) => {
             </p>
 
             <div className="flex flex-col justify-center items-center md:flex-row md:space-x-5 pt-5">
-                <PhotoIcon className="w-[320px] h-[320px] border object-contain text-gray-300" />
+                <Image
+                    className="border object-contain" 
+                    alt=""
+                    src={preview || "https://links.papareact.com/ucj"}
+                    width={320}
+                    height={320}
+                />
 
                 <form className="flex flex-col flex-1 p-2 space-y-2" onSubmit={mintNFT}>
                     <label className="font-light">Name of Item</label>
