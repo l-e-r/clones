@@ -20,9 +20,9 @@ const WalletMessage = (props: Props) => {
         }}
         initial="hidden"
         animate="show" 
-        className="max-w-6xl mx-auto w-full">
-        <div className="flex items-center justify-center bg-red-600 p-1">
-            <p className="text-xs font-semibold">
+        className="relative max-w-6xl mx-auto w-full">
+        <div className="absolute top-0 w-full text-center bg-red-600 p-1">
+            <p className="text-xs font-semibold text-white">
                 No Wallet Connection
             </p>
         </div>
